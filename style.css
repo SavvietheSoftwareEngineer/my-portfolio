@@ -78,6 +78,10 @@ body {
   transform: translateY(-3px);
 }
 
+.btn-outline {
+  background: red !important;
+}
+
 /* SECTIONS */
 .section {
   padding: 90px 10%;

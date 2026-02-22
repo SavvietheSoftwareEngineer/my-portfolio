@@ -1,6 +1,4 @@
-// ================================
-// 1️⃣ Smooth scroll for anchor links
-// ================================
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -11,16 +9,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ======================================
-// 2️⃣ Fade-in / slide-in animations on scroll
-// ======================================
-const faders = document.querySelectorAll('.portfolio-item, #contact h2, #portfolio h2');
-
-const appearOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -50px 0px"
-};
-
+// Fade-in on scroll
+const faders = document.querySelectorAll('.portfolio-item, #portfolio h2, #contact h2');
+const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
 const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
   entries.forEach(entry => {
     if(!entry.isIntersecting) return;
@@ -28,43 +19,32 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
     appearOnScroll.unobserve(entry.target);
   });
 }, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
 
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
-
-// ======================================
-// 3️⃣ Typing effect in hero banner
-// ======================================
+// Hero typing effect
 const heroText = "Web Developer & WordPress Specialist";
-const heroElement = document.querySelector('header p');
+const heroElement = document.querySelector('.typing-text');
 let index = 0;
-
 function typeHeroText() {
   if(index < heroText.length){
     heroElement.textContent += heroText.charAt(index);
     index++;
-    setTimeout(typeHeroText, 80); // typing speed
+    setTimeout(typeHeroText, 80);
   }
 }
-
-// Start typing effect on page load
 window.addEventListener('load', () => {
   heroElement.textContent = "";
   typeHeroText();
 });
 
-// ======================================
-// 4️⃣ Optional sticky contact button (floating)
-// ======================================
-// Create a floating button dynamically
+// Floating Contact Button
 const contactBtn = document.createElement('a');
 contactBtn.href = "#contact";
 contactBtn.textContent = "Contact Me";
 contactBtn.className = "floating-btn";
 document.body.appendChild(contactBtn);
 
-/* CSS for floating button (add to your style.css)
+/* Add CSS in style.css:
 .floating-btn {
   position: fixed;
   right: 20px;

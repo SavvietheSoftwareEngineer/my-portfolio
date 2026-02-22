@@ -1,26 +1,18 @@
-// Typing effect
-const text = "Web Developer & WordPress Specialist";
-const target = document.querySelector(".typing-text");
-let i = 0;
+// Fade-in animation on scroll
+const sections = document.querySelectorAll('.section');
 
-function typeText() {
-  if (i < text.length) {
-    target.textContent += text.charAt(i);
-    i++;
-    setTimeout(typeText, 80);
-  }
-}
-
-window.addEventListener("load", () => {
-  target.textContent = "";
-  typeText();
-});
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    document.querySelector(link.getAttribute("href"))
-      .scrollIntoView({ behavior: "smooth" });
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+    }
   });
+}, { threshold: 0.15 });
+
+sections.forEach(section => {
+  section.style.opacity = 0;
+  section.style.transform = 'translateY(40px)';
+  section.style.transition = 'all 0.8s ease';
+  observer.observe(section);
 });

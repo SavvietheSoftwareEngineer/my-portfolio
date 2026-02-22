@@ -1,18 +1,44 @@
-// Fade-in animation on scroll
-const sections = document.querySelectorAll('.section');
+// THEME TOGGLE
+const toggle = document.getElementById("themeToggle");
+const body = document.body;
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.15 });
+toggle.onclick = () => {
+  body.classList.toggle("light");
+  toggle.textContent = body.classList.contains("light") ? "🌞" : "🌙";
+};
 
-sections.forEach(section => {
-  section.style.opacity = 0;
-  section.style.transform = 'translateY(40px)';
-  section.style.transition = 'all 0.8s ease';
-  observer.observe(section);
+// FILTERS
+const filterBtns = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".card");
+
+filterBtns.forEach(btn => {
+  btn.onclick = () => {
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+    cards.forEach(card => {
+      card.style.display =
+        filter === "all" || card.classList.contains(filter)
+          ? "block"
+          : "none";
+    });
+  };
 });
+
+// MODALS
+document.querySelectorAll(".card").forEach(card => {
+  card.onclick = () =>
+    document.getElementById(card.dataset.modal).classList.add("active");
+});
+
+document.querySelectorAll(".close").forEach(btn => {
+  btn.onclick = () =>
+    btn.closest(".modal").classList.remove("active");
+});
+
+window.onclick = e => {
+  if (e.target.classList.contains("modal")) {
+    e.target.classList.remove("active");
+  }
+};

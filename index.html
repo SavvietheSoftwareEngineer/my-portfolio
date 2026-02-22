@@ -1,89 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Saviour Chikanda | Web Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Hello, I’m <span>Saviour Chikanda</span></h1>
-      <p>Web & WordPress Developer crafting modern digital experiences</p>
+<body class="dark">
+
+<!-- THEME TOGGLE -->
+<button id="themeToggle">🌙</button>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Hello, I’m <span>Saviour Chikanda</span></h1>
+    <p>Web & WordPress Developer building modern digital solutions</p>
+
+    <div class="hero-buttons">
       <a href="#portfolio" class="btn-primary">View My Work</a>
+      <a href="Saviour-Chikanda-CV.pdf" class="btn-outline" download>
+        Download CV
+      </a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p class="about-text">
-      I’m a passionate web developer focused on building clean, functional,
-      and visually engaging websites. I’ve worked on corporate, NGO, and
-      service-based websites using WordPress and custom front-end technologies.
-      My goal is to translate ideas into reliable, user-friendly digital solutions.
-    </p>
-  </section>
+<!-- ABOUT -->
+<section class="section">
+  <h2>About Me</h2>
+  <p class="about-text">
+    I am a web developer with experience delivering corporate, NGO, and service-based websites.
+    I focus on clarity, structure, and usability, translating ideas into reliable digital platforms
+    using WordPress and front-end technologies.
+  </p>
+</section>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="section dark">
-    <h2>Web & WordPress Projects</h2>
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section dark-section">
+  <h2>Web & WordPress Projects</h2>
 
-    <div class="portfolio-grid">
+  <!-- FILTERS -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="corporate">Corporate</button>
+    <button class="filter-btn" data-filter="ngo">NGO</button>
+  </div>
 
-      <div class="card">
-        <img src="images/maksure.jpg" alt="Maksure">
-        <div class="card-info">
-          <h3>Maksure Risk Solutions</h3>
-          <a href="https://maksure.co.za" target="_blank">View Website →</a>
-        </div>
-      </div>
+  <div class="portfolio-grid">
 
-      <div class="card">
-        <img src="images/citiblu.jpg" alt="Citiblu">
-        <div class="card-info">
-          <h3>Citiblu</h3>
-          <a href="https://www.citiblu.com" target="_blank">View Website →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="images/mesn.jpg" alt="MESN Africa">
-        <div class="card-info">
-          <h3>MESN Africa</h3>
-          <a href="https://mesn.africa" target="_blank">View Website →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="images/dorcas.jpg" alt="Dorcas & Martin Global">
-        <div class="card-info">
-          <h3>Dorcas & Martin Global</h3>
-          <a href="https://dorcasmartinglobal.com/" target="_blank">View Website →</a>
-        </div>
-      </div>
-
+    <div class="card corporate" data-modal="maksure">
+      <img src="images/maksure.jpg">
+      <h3>Maksure Risk Solutions</h3>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h2>Contact Me</h2>
-
-    <div class="contact-links">
-      <a href="mailto:saviourchikanda09@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/saviour-chikanda-124a32243/" target="_blank">LinkedIn</a>
-      <a href="https://wa.me/27742192259" target="_blank">WhatsApp</a>
+    <div class="card corporate" data-modal="citiblu">
+      <img src="images/citiblu.jpg">
+      <h3>Citiblu</h3>
     </div>
-  </section>
 
-  <footer>
-    <p>© 2026 Saviour Chikanda</p>
-  </footer>
+    <div class="card ngo" data-modal="mesn">
+      <img src="images/mesn.jpg">
+      <h3>MESN Africa</h3>
+    </div>
 
-  <script src="script.js"></script>
+    <div class="card corporate" data-modal="dorcas">
+      <img src="images/dorcas.jpg">
+      <h3>Dorcas & Martin Global</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- GITHUB -->
+<section class="section">
+  <h2>GitHub</h2>
+  <p>Explore my code, experiments, and projects.</p>
+  <a class="btn-primary" href="https://github.com/savviethesoftwareengineer" target="_blank">
+    Visit My GitHub
+  </a>
+</section>
+
+<!-- CONTACT -->
+<section class="section dark-section">
+  <h2>Contact Me</h2>
+  <div class="contact-links">
+    <a href="mailto:saviourchikanda09@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/saviour-chikanda-124a32243/" target="_blank">LinkedIn</a>
+    <a href="https://wa.me/27742192259" target="_blank">WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Saviour Chikanda
+</footer>
+
+<!-- MODALS -->
+<div class="modal" id="maksure">
+  <div class="modal-box">
+    <span class="close">×</span>
+    <h3>Maksure Risk Solutions</h3>
+    <p>Corporate insurance website focusing on clarity, structure, and trust.</p>
+    <ul>
+      <li>Role: Web & WordPress Developer</li>
+      <li>Tools: WordPress, Elementor, CSS</li>
+    </ul>
+    <a href="https://maksure.co.za" target="_blank" class="btn-primary">Visit Site</a>
+  </div>
+</div>
+
+<div class="modal" id="citiblu">
+  <div class="modal-box">
+    <span class="close">×</span>
+    <h3>Citiblu</h3>
+    <p>Service-based website designed for clean navigation and content clarity.</p>
+    <ul>
+      <li>Role: Website Developer</li>
+      <li>Tools: WordPress, CSS</li>
+    </ul>
+    <a href="https://www.citiblu.com" target="_blank" class="btn-primary">Visit Site</a>
+  </div>
+</div>
+
+<div class="modal" id="mesn">
+  <div class="modal-box">
+    <span class="close">×</span>
+    <h3>MESN Africa</h3>
+    <p>NGO website supporting community outreach and awareness.</p>
+    <ul>
+      <li>Role: Web Developer</li>
+      <li>Tools: WordPress</li>
+    </ul>
+    <a href="https://mesn.africa" target="_blank" class="btn-primary">Visit Site</a>
+  </div>
+</div>
+
+<div class="modal" id="dorcas">
+  <div class="modal-box">
+    <span class="close">×</span>
+    <h3>Dorcas & Martin Global</h3>
+    <p>Corporate services website with structured layouts and branding.</p>
+    <ul>
+      <li>Role: Website Developer</li>
+      <li>Tools: WordPress</li>
+    </ul>
+    <a href="https://dorcasmartinglobal.com" target="_blank" class="btn-primary">Visit Site</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

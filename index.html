@@ -2,88 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saviour Chikanda | Portfolio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saviour Chikanda | Web Developer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- HERO -->
-  <header id="home">
-    <div class="hero">
-      <h1>Hello, I'm Saviour Chikanda</h1>
-      <p class="typing-text"></p>
-      <a href="#portfolio" class="btn">View My Work</a>
-      <div class="scroll-down">↓</div>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Hello, I’m <span>Saviour Chikanda</span></h1>
+      <p>Web & WordPress Developer crafting modern digital experiences</p>
+      <a href="#portfolio" class="btn-primary">View My Work</a>
     </div>
   </header>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" class="section">
     <h2>About Me</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>
-          I’m <strong>Saviour Chikanda</strong>, a web developer with a strong focus on
-          WordPress and front-end development. I enjoy building clean, modern,
-          and user-friendly websites for businesses, NGOs, and personal brands.
-        </p>
-      </div>
-      <div class="about-image">
-        <img src="images/profile.jpg" alt="Saviour Chikanda">
-      </div>
-    </div>
+    <p class="about-text">
+      I’m a passionate web developer focused on building clean, functional,
+      and visually engaging websites. I’ve worked on corporate, NGO, and
+      service-based websites using WordPress and custom front-end technologies.
+      My goal is to translate ideas into reliable, user-friendly digital solutions.
+    </p>
   </section>
 
   <!-- PORTFOLIO -->
-  <section id="portfolio">
+  <section id="portfolio" class="section dark">
     <h2>Web & WordPress Projects</h2>
 
     <div class="portfolio-grid">
 
-      <div class="portfolio-item">
-        <div class="portfolio-inner">
-          <img src="images/maksure.jpg" alt="Maksure">
-          <div class="overlay">
-            <h3>Maksure Risk Solutions</h3>
-            <p>Insurance & risk solutions website</p>
-            <a href="https://www.maksure.co.za" target="_blank">View Site</a>
-          </div>
+      <div class="card">
+        <img src="images/maksure.jpg" alt="Maksure">
+        <div class="card-info">
+          <h3>Maksure Risk Solutions</h3>
+          <a href="https://maksure.co.za" target="_blank">View Website →</a>
         </div>
       </div>
 
-      <div class="portfolio-item">
-        <div class="portfolio-inner">
-          <img src="images/citiblu.jpg" alt="Citiblu">
-          <div class="overlay">
-            <h3>Citiblu</h3>
-            <p>Corporate services website</p>
-            <a href="https://www.citiblu.com" target="_blank">View Site</a>
-          </div>
+      <div class="card">
+        <img src="images/citiblu.jpg" alt="Citiblu">
+        <div class="card-info">
+          <h3>Citiblu</h3>
+          <a href="https://www.citiblu.com" target="_blank">View Website →</a>
         </div>
       </div>
 
-      <div class="portfolio-item">
-        <div class="portfolio-inner">
-          <img src="images/mesn.jpg" alt="MESN Africa">
-          <div class="overlay">
-            <h3>MESN Africa</h3>
-            <p>NGO & community platform</p>
-            <a href="https://mesn.africa" target="_blank">View Site</a>
-          </div>
+      <div class="card">
+        <img src="images/mesn.jpg" alt="MESN Africa">
+        <div class="card-info">
+          <h3>MESN Africa</h3>
+          <a href="https://mesn.africa" target="_blank">View Website →</a>
         </div>
       </div>
 
-      <div class="portfolio-item">
-        <div class="portfolio-inner">
-          <img src="images/dorcas.jpg" alt="Dorcas & Martin Global">
-          <div class="overlay">
-            <h3>Dorcas & Martin Global</h3>
-            <p>Global services website</p>
-            <a href="https://dorcasmartinglobal.com/" target="_blank">View Site</a>
-          </div>
+      <div class="card">
+        <img src="images/dorcas.jpg" alt="Dorcas & Martin Global">
+        <div class="card-info">
+          <h3>Dorcas & Martin Global</h3>
+          <a href="https://dorcasmartinglobal.com/" target="_blank">View Website →</a>
         </div>
       </div>
 
@@ -91,14 +70,19 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="section">
     <h2>Contact Me</h2>
-    <div class="contact-buttons">
-      <a class="btn" href="https://www.linkedin.com/in/saviour-chikanda-124a32243/" target="_blank">LinkedIn</a>
-      <a class="btn" href="https://wa.me/27742192259" target="_blank">WhatsApp</a>
-      <a class="btn" href="mailto:saviourchikanda09@gmail.com">Email</a>
+
+    <div class="contact-links">
+      <a href="mailto:saviourchikanda09@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/saviour-chikanda-124a32243/" target="_blank">LinkedIn</a>
+      <a href="https://wa.me/27742192259" target="_blank">WhatsApp</a>
     </div>
   </section>
+
+  <footer>
+    <p>© 2026 Saviour Chikanda</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

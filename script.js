@@ -1,3 +1,4 @@
+alert("JS is connected");
 // Fade-in animation on scroll
 const sections = document.querySelectorAll('.section');
 

@@ -16,3 +16,25 @@ sections.forEach(section => {
   section.style.transition = 'all 0.8s ease';
   observer.observe(section);
 });
+
+const toggle = document.getElementById("theme-toggle");
+const body = document.body;
+
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-mode");
+  toggle.textContent = "☀️";
+}
+
+// Toggle
+toggle.addEventListener("click", () => {
+  body.classList.toggle("light-mode");
+
+  if (body.classList.contains("light-mode")) {
+    localStorage.setItem("theme", "light");
+    toggle.textContent = "☀️";
+  } else {
+    localStorage.setItem("theme", "dark");
+    toggle.textContent = "🌙";
+  }
+});

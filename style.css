@@ -197,6 +197,11 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
+.badge.progress {
+  background: linear-gradient(135deg, #d29922, #f2cc60);
+  color: #000;
+}
+
 /* CONTACT */
 .contact-links {
   display: flex;
